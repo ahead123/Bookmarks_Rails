@@ -1,0 +1,21 @@
+
+<%= bootstrap_form_for(@bookmark) do |f| %>
+  <% if @bookmark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h2>
+
+      <ul>
+      <% @bookmark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+    <%= f.text_field :title %>
+    <%= f.text_field :url %>
+    <%= f.text_field :content %>
+    <%= f.primary "Create" %>
+
+<% end %>
