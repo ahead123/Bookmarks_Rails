@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  root 'bookmarks#index'
+
+  devise_scope :user do
+    authenticated :user do
+      root 'bookmarks#index', as: :authenticated_root
+    end
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
 
   resources :bookmarks
   resources :users
