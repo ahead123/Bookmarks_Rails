@@ -1,14 +1,31 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @bookmark.title %>
-</p>
+	<div class="page-header text-info text-center">
+		<h1 style="font-size: 3.8em;">Booky's by User</h1>
+		<h3>created by: <%= @bookmark.user.username %></h3>
+	</div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @bookmark.url %>
-</p>
+<div class="container-fluid">
+<div class="row">
+	<div class="well col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+		<p id="notice" class="alert-success"><%= notice %></p>
 
-<%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
-<%= link_to 'Back', bookmarks_path %>
+		<p class="text-muted">
+		  <strong>Title:</strong>
+		  <%= @bookmark.title %>
+		</p>
+
+		<p class="text-muted">
+		  <strong>Url:</strong>
+		  <%= @bookmark.url %>
+		</p>
+
+		<p class="text-muted">
+		  <strong>Content:</strong>
+		  <%= @bookmark.content %>
+		</p>
+		<br />
+		<%= link_to 'Edit', edit_bookmark_path(@bookmark), class: "btn btn-success" %> |
+		<%= link_to 'Back', bookmarks_path, class: "btn btn-warning" %>
+	</div>
+ </div>
+</div>

@@ -1,19 +1,22 @@
 <div class="page-header">
-	<h2 class="text-info">Hi Welcome Back to Booky!</h2>
-	<h4 class="text-muted">Go ahead - Get signed in</h4>
+  <h1 class="text-info text-center" style="font-size: 3.8em;">Booky!</h1>
+	<h2 class="text-info text-center">Start saving your favorite bookmarks in one spot</h2>
+	<h4 class="text-muted text-center">Go ahead and get signed in or signed up!</h4>
 </div>
-
+<div class="row">
+	<div class="col-xs-8 col-xs-offset-2 col-md-3 col-md-offset-4">
 <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  
+  	
   <%= f.email_field :email, autofocus: true %>
-
   
     <%= f.password_field :password, autocomplete: "off" %>
-
+  
   <% if devise_mapping.rememberable? -%>
   <%= f.check_box :remember_me %>
   <% end -%>
-  <%= f.primary "Log in" %>
+  <%= f.submit "Log in", class: "btn btn-primary" %>
 <% end %>
-
+<br />
 <%= render "devise/shared/links" %>
+  </div>
+</div>

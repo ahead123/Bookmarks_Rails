@@ -1,7 +1,11 @@
+
 <div class="page-header">
-	<h1 class="text-info">All Users</h1>
+	<h1 class="text-info text-center" style="font-size: 3.8em;">Booky's registered users</h1>
+	<h3 class="text-muted text-center">See someone you know?</h3>
 </div>
-<table class="table table-striped table-hover">
+
+<div class="table-responsive col-md-6 col-md-offset-3">
+		<table class="table table-hover table-condensed">
 <thead>
 	<tr>
 		<th>Email</th>
@@ -12,12 +16,19 @@
 <% @users.each do |user| %>
   <tr>
 	   <td><%= user.email %></td>
-	   <td><%= user.id %></td>
+	   <td><%= user.username %></td>
   </tr>
 </tbody>
 <% end %>
 
 </table>
-<p><%= link_to "Back to Bookmarks", bookmarks_path %></p>
+</div>
+<div class="row">
+	<div class="col-md-5 col-md-offset-5">
+		<p><%= link_to "Back to Bookmarks", bookmarks_path, class: "btn btn-primary" %></p>
+	</div>
+</div>
+
+
 
 

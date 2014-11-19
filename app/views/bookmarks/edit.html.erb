@@ -1,6 +1,36 @@
-<h1>Editing bookmark</h1>
+<div class="page-header">
+	<h1 class="text-info text-center" style="font-size: 3.8em;">Edit your Booky's</h1>
+	<h3 class="text-muted text-center">It's a cinch!</h3>
+</div>
+<%= bootstrap_form_for(@bookmark) do |f| %>
+  <% if @bookmark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @bookmark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Show', @bookmark %> |
-<%= link_to 'Back', bookmarks_path %>
+ <div class="row">
+   <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+    <%= f.text_field :title %>
+    <%= f.text_field :url %>
+    <%= f.text_field :content %>
+    <%= f.primary "Update" %>
+   </div>
+ </div>
+
+<% end %>
+
+<br />
+<div class="row">
+	<div class="col-xs-5 col-xs-offset-1 col-md-6 col-md-offset-3">
+		<%= link_to 'Show', @bookmark, class: "btn btn-primary"%> |
+		<%= link_to 'Back', bookmarks_path, class: "btn btn-warning" %>
+	</div>
+</div>
+
