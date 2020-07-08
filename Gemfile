@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'bootstrap_form'
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 3.1.3'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
